@@ -560,3 +560,6 @@ costoDeReparacionDeLosPrimeros n [] = 0
 costoDeReparacionDeLosPrimeros n autos | n > 0 && necesitaRevision (head autos) = costoDeReparacion (head autos) + costoDeReparacionDeLosPrimeros (disminuirNumero n) (tail autos)
     | n == 0 = 0
     | otherwise = costoDeReparacionDeLosPrimeros n (tail autos)
+
+-- *Main> costoDeReparacionDeLosPrimeros 3 autosInfinitos
+-- 45000
